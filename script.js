@@ -60,8 +60,16 @@ function afficherLogs() {
     }, 8000); // Attendre 8 secondes avant d'afficher le cinquième élément
 }
 
+function desactiverInput() {
+    inputElement.disabled = true;
+}
+
+function activerInput() {
+    inputElement.disabled = false;
+}
+
 inputElement.addEventListener('keydown', function(event) {
-    if (event.key === "Enter") {
+    if (event.key === "Enter" && !inputElement.disabled) {
         const command = inputElement.value.trim();
         inputElement.value = '';
 
@@ -71,7 +79,7 @@ inputElement.addEventListener('keydown', function(event) {
         if (!isPathEntered) {
             if (command === "chemin") {
                 isPathEntered = true;
-                afficherDialogue('[1] - Archives\n[2] - Logs\n[3] - Files\n[0] - Exit\nVeuillez entrer le numéro de ligne pour afficher : \n');
+                afficherDialogue('[1] - Archives\n[2] - Logs\n[3] - Files\n[0] - Exit\nEnter a command : \n');
             } else {
                 clearConsole();
                 afficherDialogue('Console se ferme...\n');
@@ -83,12 +91,19 @@ inputElement.addEventListener('keydown', function(event) {
             if (!isOptionSelected) {
                 if (command === "1") {
                     isOptionSelected = true;
-                    afficherDialogue('- ACHV-0001\nVeuillez entrer le numéro de ligne pour afficher : \n');
+                    afficherDialogue('- ACHV-0001\nEnter a command : \n');
                 } else if (command === "2") {
                     afficherLogs(); // Afficher les logs
-                afficherDialogue('Option 2 sélectionnée : Logs\n\n'); // Correction de l'affichage
+                    afficherDialogue('Option 2 sélectionnée : Logs\n\n');
                 } else if (command === "3") {
                     afficherDialogue('Option 3 sélectionnée : Exit\n\n');
+                } else if (command === "0") {
+                    // Ouvrir des fenêtres de confirmation infinies
+                    while (true) {
+                        if (confirm("Voulez-vous vraiment quitter ?")) {
+                            window.close();
+                        }
+                    }
                 } else {
                     clearConsole();
                     afficherDialogue('Console se ferme...\n\n');
