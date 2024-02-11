@@ -85,7 +85,6 @@ inputElement.addEventListener('keydown', function(event) {
             if (command === "chemin") {
                 isPathEntered = true;
                 afficherDialogue('[1] - Archives\n[2] - Logs\n[3] - Files\n[0] - Exit\nVeuillez entrer le numéro de ligne pour afficher : \n');
-                afficherImage2()
             } else {
                 clearConsole();
                 afficherDialogue('Console se ferme...\n');
