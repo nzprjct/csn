@@ -7,7 +7,7 @@ let archiveNotFoundCounter = 0;
 
 function afficherDialogue(texte) {
     // Délai entre chaque caractère (en millisecondes)
-    const delaiEntreCaracteres = 20;
+    const delaiEntreCaracteres = 10;
     let index = 0;
 
     function afficherCaractere() {
@@ -36,8 +36,28 @@ function afficherImage() {
         setTimeout(() => {
             image.remove(); // Supprimer l'image après un certain délai
             afficherDialogue("La suite du dialogue est terminée."); // Afficher un message indiquant que la suite du dialogue est terminée
-        }, 200); // Attendre 0.5 secondes avant de supprimer l'image
+        }, 500); // Attendre 0.5 secondes avant de supprimer l'image
     };
+}
+
+function afficherLogs() {
+    // Afficher les éléments des logs avec un délai entre chaque élément
+    afficherDialogue(' ', true);
+    setTimeout(() => {
+        afficherDialogue('26/01/2024 - CLASS01 AND CLASS02 DRIVE TO X SPOT SUBJECT01 IS POISONED\n', true);
+    }, 1000); // Attendre 0.1 seconde avant d'afficher le premier élément
+    setTimeout(() => {
+        afficherDialogue('27/01/2024 - FIRST SPAWN TO CLASS01 FIRST SPAWN TO CLASS02\n', true);
+    }, 2000); // Attendre 2 secondes avant d'afficher le deuxième élément
+    setTimeout(() => {
+        afficherDialogue('28/01/2024 - CLASS01 SURVIVED CLASS02 IS DEAD\n', true);
+    }, 4000); // Attendre 4 secondes avant d'afficher le troisième élément
+    setTimeout(() => {
+        afficherDialogue('29/01/2024 - BASEMENT IS DISCOVERED, SUBJECT17 TALK TO HOST\n', true);
+    }, 6000); // Attendre 6 secondes avant d'afficher le quatrième élément
+    setTimeout(() => {
+        afficherDialogue('30/01/2024 - XXXX X X X X X X X  X X XXXX XX X X X X XX X\n', true);
+    }, 8000); // Attendre 8 secondes avant d'afficher le cinquième élément
 }
 
 inputElement.addEventListener('keydown', function(event) {
@@ -65,7 +85,8 @@ inputElement.addEventListener('keydown', function(event) {
                     isOptionSelected = true;
                     afficherDialogue('- ACHV-0001\nVeuillez entrer le numéro de ligne pour afficher : \n');
                 } else if (command === "2") {
-                    afficherDialogue('Option 2 sélectionnée : Logs\n\n');
+                    afficherLogs(); // Afficher les logs
+                afficherDialogue('Option 2 sélectionnée : Logs\n\n'); // Correction de l'affichage
                 } else if (command === "3") {
                     afficherDialogue('Option 3 sélectionnée : Exit\n\n');
                 } else {
