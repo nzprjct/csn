@@ -7,7 +7,7 @@ let archiveNotFoundCounter = 0;
 
 function afficherDialogue(texte) {
     // Délai entre chaque caractère (en millisecondes)
-    const delaiEntreCaracteres = 25;
+    const delaiEntreCaracteres = 20;
     let index = 0;
 
     function afficherCaractere() {
