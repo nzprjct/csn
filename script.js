@@ -63,7 +63,7 @@ inputElement.addEventListener('keydown', function(event) {
             if (!isOptionSelected) {
                 if (command === "1") {
                     isOptionSelected = true;
-                    afficherDialogue('ACHV-0001\nArchives not found\nArchives not found\nArchives not found\nArchives not found\nArchives not found\nArchives not found\nArchives not found\nVeuillez entrer le numéro de ligne pour afficher : \n');
+                    afficherDialogue('- ACHV-0001\n[0] Archives not found\n[0]Archives not found\n[0]Archives not found\n[0]Archives not found\n[0]Archives not found\n[0]Archives not found\n[0]Archives not found\nVeuillez entrer le numéro de ligne pour afficher : \n');
                 } else if (command === "2") {
                     afficherDialogue('Option 2 sélectionnée : Logs\n\n');
                 } else if (command === "3") {
