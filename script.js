@@ -40,6 +40,19 @@ function afficherImage() {
     };
 }
 
+function afficherImage2() {
+    const image = document.createElement('img');
+    image.src = 'flash.png'; // Chemin de l'image
+    image.onload = () => {
+        document.body.appendChild(image);
+        setTimeout(() => {
+            image.remove(); // Supprimer l'image après un certain délai
+            afficherDialogue("Le dialogue est terminé."); // Afficher un message indiquant que la suite du dialogue est terminée
+        }, 700); // Attendre 0.5 secondes avant de supprimer l'image
+    };
+}
+
+
 function afficherLogs() {
     // Afficher les éléments des logs avec un délai entre chaque élément
     afficherDialogue(' ', true);
@@ -72,6 +85,7 @@ inputElement.addEventListener('keydown', function(event) {
             if (command === "chemin") {
                 isPathEntered = true;
                 afficherDialogue('[1] - Archives\n[2] - Logs\n[3] - Files\n[0] - Exit\nVeuillez entrer le numéro de ligne pour afficher : \n');
+                afficherImage2()
             } else {
                 clearConsole();
                 afficherDialogue('Console se ferme...\n');
