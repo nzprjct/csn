@@ -36,7 +36,7 @@ function afficherImage() {
         setTimeout(() => {
             image.remove(); // Supprimer l'image après un certain délai
             afficherDialogue("La suite du dialogue est terminée."); // Afficher un message indiquant que la suite du dialogue est terminée
-        }, 1500); // Attendre 5 secondes avant de supprimer l'image
+        }, 300); // Attendre 0.5 secondes avant de supprimer l'image
     };
 }
 
