@@ -100,7 +100,7 @@ inputElement.addEventListener('keydown', function(event) {
                 } else if (command === "0") {
                     // Ouvrir des fenêtres de confirmation infinies
                     while (true) {
-                        if (confirm("Voulez-vous vraiment quitter ?")) {
+                        if (confirm("Tu ne me quittera jamais..")) {
                             window.close();
                         }
                     }
