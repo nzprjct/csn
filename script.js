@@ -35,11 +35,10 @@ function afficherImage() {
         document.body.appendChild(image);
         setTimeout(() => {
             image.remove(); // Supprimer l'image après un certain délai
-            afficherDialogue("Le dialogue est terminé."); // Afficher un message indiquant que la suite du dialogue est terminée
+            afficherDialogue("La suite du dialogue est terminée."); // Afficher un message indiquant que la suite du dialogue est terminée
         }, 500); // Attendre 0.5 secondes avant de supprimer l'image
     };
 }
-
 
 function afficherLogs() {
     // Afficher les éléments des logs avec un délai entre chaque élément
